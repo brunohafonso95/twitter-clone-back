@@ -15,7 +15,7 @@ io.on('connection', socket => {
 })
 
 // configurando o conexão com o mlab
-mongoose.connect('mongodb://brunohafonso:twitter123@ds141704.mlab.com:41704/twitter-clone', {
+mongoose.connect(`mongodb://${process.env.userName}:${process.env.pass}@ds141704.mlab.com:41704/twitter-clone`, {
     useNewUrlParser: true
 })
 
