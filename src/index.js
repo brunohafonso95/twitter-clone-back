@@ -36,8 +36,8 @@ app.use(require('./routes'))
 
 
 // iniciando o servidor na porta definida anteriormente
-// server.listen(PORT, () => {
-//     console.log(`Server started o port ${PORT}`)
-// })
+server.listen(PORT, () => {
+    console.log(`Server started o port ${PORT}`)
+})
 
-exports default app
+module.exports = app;
