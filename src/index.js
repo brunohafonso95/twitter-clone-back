@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 
-const PORT = process.env.PORT || 3000 // configurando a porta do servidor
+const PORT = process.env.PORT // configurando a porta do servidor
 const app = express() // instanciando o app
 
 // extraindo o servidor http do server criado
@@ -15,7 +15,7 @@ io.on('connection', socket => {
 })
 
 // configurando o conexão com o mlab
-mongoose.connect(`mongodb://${process.env.userName}:${process.env.pass}@ds141704.mlab.com:41704/twitter-clone`, {
+mongoose.connect(`mongodb://${process.env.userdb}:${process.env.password}@ds141704.mlab.com:41704/twitter-clone`, {
     useNewUrlParser: true
 })
 
@@ -36,6 +36,8 @@ app.use(require('./routes'))
 
 
 // iniciando o servidor na porta definida anteriormente
-server.listen(PORT, () => {
-    console.log(`Server started o port ${PORT}`)
-})
+// server.listen(PORT, () => {
+//     console.log(`Server started o port ${PORT}`)
+// })
+
+exports default app
